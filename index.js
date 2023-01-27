@@ -1,15 +1,20 @@
 function generateRandomNumbers() {
+    let randomNumbers = [];
     let angkaGenap = [];
     let angkaGanjil = [];
-  
     for (let i = 0; i < 100; i++) {
       let randomNumber = Math.floor(Math.random() * 50) + 1;
-      if (randomNumber % 2 === 0) {
-        angkaGenap.push(randomNumber);
-      } else {
-        angkaGanjil.push(randomNumber);
-      }
+     randomNumbers.push(randomNumber)
     }
+
+    for (let i = 0; i < randomNumbers.length; i++) {
+        if (randomNumbers[i] % 2 === 0) {
+           angkaGenap.push(randomNumbers[i]);
+        } else {
+           angkaGanjil.push(randomNumbers[i]);
+        }
+    }
+
     console.log("Angka ganjil:", angkaGenap);
     console.log("Angka genap:", angkaGanjil);
 
@@ -63,7 +68,7 @@ function generateRandomNumbers() {
         console.log("genap min", genapMin > ganjilMin ? "lebih besar" : "kurang", "dari jumlah min ganjil.");
         console.log("genap maks", genapnMax > ganjilMax ? "lebih besar" : "kurang", "dari ganjil maks.");
       }
-      
+
       compareStatistics(angkaGenap, angkaGanjil);
   }
   
